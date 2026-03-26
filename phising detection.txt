@@ -1,0 +1,97 @@
+Saya sedang membangun sistem "Phishing URL Detection" berbasis Machine Learning dengan arsitektur full-stack.
+
+Kondisi saya saat ini:
+
+* VPS: Windows Server 2012 (sudah aktif, punya IP public)
+* Python: 3.8.10 sudah terinstall
+* Git: sudah terinstall dan terhubung ke GitHub
+* Repository: sudah ada di GitHub dan sudah di-clone ke VPS
+* Backend: menggunakan Flask (sudah ada basic app.py)
+* Saya akan deploy backend di VPS (bukan cloud seperti Railway)
+* Saya belum memiliki:
+
+  * Model Machine Learning
+  * Feature extraction
+  * Frontend (UI)
+  * Integrasi frontend-backend
+  * Struktur project yang rapi
+
+Tujuan saya:
+Membangun sistem deteksi phishing URL yang bisa:
+
+1. Menerima input URL dari user
+2. Mengekstrak fitur dari URL
+3. Menggunakan model ML untuk prediksi (phishing / legit)
+4. Menampilkan hasil di frontend (web)
+5. Backend berjalan di VPS dan bisa diakses publik via IP
+
+Tolong bantu saya membuat sistem lengkap dengan detail berikut:
+
+=== BAGIAN 1: MACHINE LEARNING ===
+
+* Gunakan Python 3.8 compatible libraries
+* Gunakan scikit-learn
+* Buat dataset sederhana (boleh dummy atau sample publik)
+* Buat feature extraction dari URL (contoh: panjang URL, jumlah titik, https, dll)
+* Latih model (Logistic Regression / Random Forest)
+* Simpan model ke file .pkl menggunakan joblib
+* Pastikan model bisa digunakan di environment VPS (tidak error versi)
+
+=== BAGIAN 2: BACKEND (FLASK API) ===
+
+* Struktur file yang rapi (app.py, model, utils, dll)
+* Endpoint:
+
+  * GET / → status API
+  * POST /predict → menerima JSON { "url": "..." }
+* Load model .pkl
+* Jalankan feature extraction
+* Return hasil prediksi JSON
+* Gunakan flask-cors
+* Gunakan waitress untuk production
+
+=== BAGIAN 3: FRONTEND (WEB SEDERHANA) ===
+
+* Gunakan HTML + CSS + JavaScript (tanpa framework dulu)
+* Input field untuk URL
+* Button "Check"
+* Tampilkan hasil:
+
+  * Phishing / Legit
+* Kirim request ke backend API (IP VPS)
+* Handle error (API tidak aktif, dll)
+
+=== BAGIAN 4: INTEGRASI ===
+
+* Cara menghubungkan frontend ke backend (fetch API)
+* Pastikan tidak kena CORS issue
+* Contoh endpoint menggunakan IP VPS
+
+=== BAGIAN 5: DEPLOYMENT VPS ===
+
+* Cara menjalankan Flask dengan waitress
+* Cara membuka port di Windows Firewall
+* Cara akses dari internet (IP public)
+* Cara memastikan API selalu berjalan (bat file / task scheduler)
+
+=== BAGIAN 6: STRUKTUR PROJECT ===
+Berikan struktur folder yang jelas, contoh:
+
+* backend/
+* frontend/
+* model/
+* utils/
+
+=== BAGIAN 7: BONUS (OPSIONAL) ===
+
+* Tambahkan scoring confidence (%)
+* Logging request
+* Simpan history hasil deteksi
+
+Berikan jawaban step-by-step, lengkap dengan:
+
+* contoh code
+* penjelasan
+* urutan pengerjaan dari awal sampai sistem bisa live
+
+Fokus pada kompatibilitas Python 3.8 dan Windows Server 2012.
