@@ -31,18 +31,6 @@ Backend API untuk mendeteksi URL phishing menggunakan Machine Learning berbasis 
 
 ---
 
-##  Struktur Project
-
-phishing-backend/
-├── app.py
-├── feature.py
-├── train.py
-├── model.pkl
-├── requirements.txt
-└── README.md
-
----
-
 ##  Instalasi
 
 ### 1. Clone Repository
